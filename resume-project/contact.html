@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_2NVrvAzAeWEIfgmlC4Kfm");
+      // emailjs.send("service_0ypwl1g","carlhenric");
+   })();
+</script>
     <title>Rosie</title>
 </head>
 <body>
@@ -44,8 +53,21 @@
              </div>
         </div>
     </header>
-     <section>
-    
+     <section class="container-fluid">
+        <div class="row bg-color-contact">
+            <div>
+                <h3 class="contact-heading uppercase text-center">Got a project in mind?</h3>
+                <h5 class="uppercase text-center">Let's work together</h5>
+            </div>
+            <div class="center-form">
+               <form onsubmit="return sendMail(this);">
+                <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+                <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+                <textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+                <button type="submit" class="btn btn-secondary center-block">Send Project Request</button>
+                </form>
+            </div>
+        </div>
     </section>
      <footer class="container-fluid">
         <div id="footer-details" class="row">
@@ -107,5 +129,8 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/sendEmail.js">
+
+    </script>
 </body>
 </html>
